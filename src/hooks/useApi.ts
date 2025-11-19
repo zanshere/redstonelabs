@@ -118,8 +118,10 @@ export function useApi<T = unknown>(
 }
 
 // Authentication hooks
+import type { LoginRequest } from '@/lib/api'; // Adjust the import path and type name as needed
+
 export function useLogin() {
-  return useApi(apiService.login);
+  return useApi((credentials: LoginRequest) => apiService.login(credentials));
 }
 
 export function useRegister() {

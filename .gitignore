@@ -23,6 +23,12 @@
 # Auth
 /src/app/auth/
 
+# hooks
+/src/app/hooks/useApi.ts
+
+# lib
+/src/app/lib/
+
 # production
 /build
 
