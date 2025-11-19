@@ -17,6 +17,12 @@
 /.next/
 /out/
 
+# backend
+/backend/
+
+# Auth
+/src/app/auth/
+
 # production
 /build
 
