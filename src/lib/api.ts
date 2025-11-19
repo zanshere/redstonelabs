@@ -179,11 +179,6 @@ interface MFAStatusResponse {
   a2fEnabled: boolean;
 }
 
-interface A2FStatusResponse {
-  a2fEnabled: boolean;
-  mfaEnabled: boolean;
-}
-
 interface LoginResponse {
   user: User;
   token: string | null;
@@ -664,9 +659,10 @@ class ApiService {
 
   getAuthHeaders(): HeadersInit {
     const token: string | null = this.getToken();
-    const headers = token ? { Authorization: `Bearer ${token}` } : {};
-    console.log('Auth headers:', headers);
-    return headers;
+    if (token) {
+      return { Authorization: `Bearer ${token}` };
+    }
+    return {};
   }
 
   // ============ UTILITY METHODS ============
@@ -698,7 +694,7 @@ class ApiService {
       const headers: HeadersInit = token ? { Authorization: `Bearer ${token}` } : {};
       
       // Remove Content-Type for FormData, let browser set it
-      delete headers['Content-Type'];
+      delete (headers as Record<string, string>)['Content-Type'];
       
       const response = await fetch(`${this.baseURL}/api/user/upload-profile-photo`, {
         method: 'POST',

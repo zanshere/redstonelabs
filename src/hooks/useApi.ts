@@ -22,17 +22,16 @@ interface UseApiState<T> {
   success: boolean;
 }
 
-interface UseApiReturn<T> extends UseApiState<T> {
-  execute: (...args: unknown[]) => Promise<T>;
+interface UseApiReturn<T, P extends unknown[]> extends UseApiState<T> {
+  execute: (...args: P) => Promise<T>;
   reset: () => void;
 }
 
-export function useApi<T = unknown>(
-  apiCall: (...args: unknown[]) => Promise<T>,
+export function useApi<T, P extends unknown[]>(
+  apiCall: (...args: P) => Promise<T>,
   options: UseApiOptions<T> = {}
-): UseApiReturn<T> {
+): UseApiReturn<T, P> {
   const {
-    immediate = false,
     initialData = null,
     onSuccess,
     onError,
@@ -47,7 +46,7 @@ export function useApi<T = unknown>(
 
   const abortControllerRef = useRef<AbortController | null>(null);
 
-  const execute = useCallback(async (...args: unknown[]): Promise<T> => {
+  const execute = useCallback(async (...args: P): Promise<T> => {
     if (abortControllerRef.current) {
       abortControllerRef.current.abort();
     }
@@ -118,10 +117,8 @@ export function useApi<T = unknown>(
 }
 
 // Authentication hooks
-import type { LoginRequest } from '@/lib/api'; // Adjust the import path and type name as needed
-
 export function useLogin() {
-  return useApi((credentials: LoginRequest) => apiService.login(credentials));
+  return useApi(apiService.login);
 }
 
 export function useRegister() {
@@ -154,11 +151,11 @@ export function useUserDashboard() {
 }
 
 export function useRecentOrders() {
-  return useApi((take: number = 5) => apiService.getRecentOrders(take));
+  return useApi(apiService.getRecentOrders);
 }
 
 export function useOrderDetail() {
-  return useApi((orderId: number) => apiService.getOrderDetail(orderId));
+  return useApi(apiService.getOrderDetail);
 }
 
 export function useUserPayments() {
@@ -205,11 +202,11 @@ export function useCreateOrder() {
 }
 
 export function useUpdateOrder() {
-  return useApi((orderId: number, orderData: unknown) => apiService.updateOrder(orderId, orderData));
+  return useApi(apiService.updateOrder);
 }
 
 export function useCancelOrder() {
-  return useApi((orderId: number, reason?: string) => apiService.cancelOrder(orderId, reason));
+  return useApi(apiService.cancelOrder);
 }
 
 export function useSubmitComplaint() {
