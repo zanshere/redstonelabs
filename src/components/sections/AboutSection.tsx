@@ -34,7 +34,7 @@ export default function AboutSection() {
             Building Digital Excellence Since 2014
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            We're a passionate team of developers, designers, and strategists
+            We`re a passionate team of developers, designers, and strategists
             dedicated to creating web solutions that make a difference
           </p>
         </div>

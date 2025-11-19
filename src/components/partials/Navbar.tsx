@@ -43,8 +43,9 @@ export default function Navbar() {
         const element = document.getElementById(id);
         if (element) {
           // Gunakan Lenis untuk smooth scroll
-          if ((window as any).lenis) {
-            (window as any).lenis.scrollTo(element, {
+          const windowWithLenis = window as Window & { lenis?: { scrollTo: (el: Element, options: { offset: number; duration: number }) => void } };
+          if (windowWithLenis.lenis) {
+            windowWithLenis.lenis.scrollTo(element, {
               offset: -80,
               duration: 1.2
             });

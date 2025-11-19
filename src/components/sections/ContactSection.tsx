@@ -20,7 +20,7 @@ export default function ContactSection() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
-    alert("Thank you for your message! We'll get back to you soon.");
+    alert("Thank you for your message! We`ll get back to you soon.");
     setFormData({ name: "", email: "", phoneNumber: "", message: "" });
   };
 
@@ -30,10 +30,10 @@ export default function ContactSection() {
         <div className="text-center mb-16">
           <Badge className="mb-4">Get In Touch</Badge>
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-            Let's Build Something Amazing
+            Let`s Build Something Amazing
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Have a project in mind? We'd love to hear about it. Reach out and let's start a conversation
+            Have a project in mind? We`d love to hear about it. Reach out and let`s start a conversation
           </p>
         </div>
 
@@ -43,7 +43,7 @@ export default function ContactSection() {
             <CardHeader>
               <CardTitle className="text-foreground">Send us a message</CardTitle>
               <CardDescription>
-                Fill out the form below and we'll get back to you within 24 hours
+                Fill out the form below and we`ll get back to you within 24 hours
               </CardDescription>
             </CardHeader>
             <CardContent>
