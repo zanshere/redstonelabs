@@ -73,7 +73,8 @@ export function DashboardSidebar() {
   const loadUserProfile = async () => {
     try {
       const response = await apiService.getUserProfile();
-      setUser(response);
+      // Normalize photo to `string | null` so it matches UserData.photo
+      setUser({ ...response, photo: response.photo ?? null });
     } catch (error) {
       console.error("Failed to load user profile:", error);
     } finally {
