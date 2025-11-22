@@ -1,7 +1,10 @@
 import React from "react";
 import Image from "next/image";
+import { useTheme } from "next-themes";
 
 export default function Footer() {
+  const { theme } = useTheme();
+
   return (
     <footer className="bg-muted/50 border-t border-border py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -9,7 +12,7 @@ export default function Footer() {
           <div>
             <div className="flex items-center space-x-2 mb-4">
               <Image 
-                src="/images/RD-Dark-nobg.png" 
+                 src={theme === 'dark' ? "/images/logo/redstonelabs-dark.png" : "/images/logo/redstonelabs-light.png"}  
                 alt="Ryuzen Dev Logo" 
                 width={145} 
                 height={145} 
@@ -92,7 +95,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="pt-8 border-t border-border text-center text-sm text-muted-foreground">
-          <p>&copy; 2025 DevCraft Studio. All rights reserved. Built with passion and code.</p>
+          <p>&copy; 2025 Redstone Labs. All rights reserved. Built with passion and code.</p>
         </div>
       </div>
     </footer>

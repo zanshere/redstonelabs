@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Rocket, Shield, Target } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { useTheme } from "next-themes";
 
 const coreValues = [
   {
@@ -25,6 +26,8 @@ const coreValues = [
 ];
 
 export default function AboutSection() {
+  const { theme } = useTheme();
+
   return (
     <section id="about" className="py-20 bg-background fade-in-section">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -53,8 +56,8 @@ export default function AboutSection() {
           </div>
           <div className="relative h-96 rounded-2xl overflow-hidden shadow-2xl">
             <Image
-              src="/images/RD-Dark-nobg.png"
-              alt="Team collaboration"
+              src={theme === 'dark' ? "/images/logo/redstonelabs-dark.png" : "/images/logo/redstonelabs-light.png"}
+              alt="Redstone Labs Team"
               width={800}
               height={600}
               className="w-full h-full object-cover"

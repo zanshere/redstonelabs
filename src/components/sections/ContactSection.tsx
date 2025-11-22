@@ -121,8 +121,8 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <h4 className="font-semibold mb-1 text-foreground">Email</h4>
-                    <p className="text-muted-foreground">hello@ryuzen.dev</p>
-                    <p className="text-muted-foreground">support@ryuzen.dev</p>
+                    <p className="text-muted-foreground">hello@redstonelabs.com</p>
+                    <p className="text-muted-foreground">support@redstonelabs.com</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">

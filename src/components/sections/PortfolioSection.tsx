@@ -2,11 +2,21 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { ArrowRight, ExternalLink } from "lucide-react";
+import { ExternalLink, Calendar, Github } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { projects, projectCategories } from "@/data/projects";
+import {
+  MorphingDialog,
+  MorphingDialogTrigger,
+  MorphingDialogContainer,
+  MorphingDialogContent,
+  MorphingDialogClose,
+  MorphingDialogTitle,
+  MorphingDialogDescription,
+  MorphingDialogImage,
+} from "@/components/motion-primitives/morphing-dialog";
 
 export default function PortfolioSection() {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -15,6 +25,15 @@ export default function PortfolioSection() {
     selectedCategory === "All"
       ? projects
       : projects.filter((project) => project.category === selectedCategory);
+
+  // Format date untuk ditampilkan
+  const formatDate = (date: Date) => {
+    return new Date(date).toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    });
+  };
 
   return (
     <section id="portfolio" className="py-20 bg-background fade-in-section">
@@ -43,49 +62,138 @@ export default function PortfolioSection() {
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((project) => (
-            <Card key={project.id} className="hover-card overflow-hidden group cursor-pointer">
-              <div className="relative h-48 overflow-hidden">
-                <Image
-                  src={project.imageUrl}
-                  alt={project.title}
-                  width={600}
-                  height={400}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                  <div className="flex gap-2 w-full">
-                    <Button variant="secondary" size="sm" className="flex-1">
-                      View Details <ArrowRight className="ml-2 w-4 h-4" />
-                    </Button>
-                    {project.demoLink && (
-                      <Button 
-                        variant="outline" 
-                        size="sm" 
-                        asChild
-                        className="border-background text-background bg-foreground/90 hover:bg-foreground hover:text-background"
-                      >
-                        <a href={project.demoLink} target="_blank" rel="noopener noreferrer">
-                          <ExternalLink className="w-4 h-4" />
-                        </a>
-                      </Button>
-                    )}
+            <MorphingDialog key={project.id}>
+              <MorphingDialogTrigger>
+                <Card className="hover-card overflow-hidden group cursor-pointer h-full flex flex-col transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                  <div className="relative h-48 overflow-hidden flex-shrink-0">
+                    <Image
+                      src={project.imageUrl}
+                      alt={project.title}
+                      width={600}
+                      height={400}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    {/* Hapus tombol view details yang muncul saat hover */}
                   </div>
-                </div>
-              </div>
-              <CardHeader>
-                <CardTitle className="line-clamp-1 text-foreground">{project.title}</CardTitle>
-                <CardDescription className="line-clamp-2">{project.description}</CardDescription>
-              </CardHeader>
-              <CardFooter>
-                <div className="flex flex-wrap gap-2">
-                  {project.technologies.map((tech: string, techIdx: number) => (
-                    <Badge key={techIdx} variant="secondary" className="text-xs">
-                      {tech}
-                    </Badge>
-                  ))}
-                </div>
-              </CardFooter>
-            </Card>
+                  <CardHeader className="flex-grow">
+                    <CardTitle className="line-clamp-1 text-foreground group-hover:text-primary transition-colors">
+                      {project.title}
+                    </CardTitle>
+                    <CardDescription className="line-clamp-2">{project.description}</CardDescription>
+                  </CardHeader>
+                  <CardFooter className="flex justify-between items-center">
+                    <div className="flex flex-wrap gap-2">
+                      {project.technologies.slice(0, 3).map((tech: string, techIdx: number) => (
+                        <Badge key={techIdx} variant="secondary" className="text-xs">
+                          {tech}
+                        </Badge>
+                      ))}
+                      {project.technologies.length > 3 && (
+                        <Badge variant="outline" className="text-xs">
+                          +{project.technologies.length - 3} more
+                        </Badge>
+                      )}
+                    </div>
+                    <div className="text-xs text-muted-foreground">
+                      Click to view details
+                    </div>
+                  </CardFooter>
+                </Card>
+              </MorphingDialogTrigger>
+
+              <MorphingDialogContainer>
+                <MorphingDialogContent className="max-w-6xl mx-auto bg-background rounded-2xl shadow-2xl overflow-hidden max-h-[90vh] overflow-y-auto">
+                  <MorphingDialogClose className="top-4 right-4 bg-background/80 backdrop-blur-sm border border-border rounded-full p-2 z-50 hover:bg-accent transition-colors">
+                    <ExternalLink className="w-5 h-5" />
+                  </MorphingDialogClose>
+                  
+                  <div className="grid lg:grid-cols-2 gap-8 p-6">
+                    <div className="space-y-6">
+                      <MorphingDialogImage
+                        src={project.imageUrl}
+                        alt={project.title}
+                        className="w-full h-80 object-cover rounded-xl shadow-lg"
+                      />
+                      
+                      {/* View Details Section - Dipindahkan ke dalam dialog */}
+                      <div className="bg-muted/50 rounded-lg p-4">
+                        <h3 className="font-semibold text-foreground mb-3 flex items-center gap-2">
+                          <ExternalLink className="w-4 h-4" />
+                          Project Details
+                        </h3>
+                        <div className="space-y-2 text-sm text-muted-foreground">
+                          <div className="flex items-center justify-between">
+                            <span>Category:</span>
+                            <Badge variant="secondary">{project.category}</Badge>
+                          </div>
+                          {project.createdAt && (
+                            <div className="flex items-center justify-between">
+                              <span>Created:</span>
+                              <span className="flex items-center gap-1">
+                                <Calendar className="w-3 h-3" />
+                                {formatDate(project.createdAt)}
+                              </span>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div className="space-y-6">
+                      <div>
+                        <MorphingDialogTitle className="text-3xl font-bold text-foreground mb-3">
+                          {project.title}
+                        </MorphingDialogTitle>
+                        <Badge variant="secondary" className="text-lg px-3 py-1 mb-4">
+                          {project.category}
+                        </Badge>
+                      </div>
+                      
+                      <MorphingDialogDescription className="text-muted-foreground leading-relaxed text-base">
+                        {project.description}
+                      </MorphingDialogDescription>
+                      
+                      <div>
+                        <h4 className="font-semibold text-foreground mb-3">Technologies Used</h4>
+                        <div className="flex flex-wrap gap-2">
+                          {project.technologies.map((tech: string, techIdx: number) => (
+                            <Badge key={techIdx} variant="secondary" className="text-sm">
+                              {tech}
+                            </Badge>
+                          ))}
+                        </div>
+                      </div>
+                      
+                      {/* Action Buttons - Dipindahkan ke dalam dialog */}
+                      <div className="flex gap-4 pt-4">
+                        {project.demoLink && (
+                          <Button asChild className="flex-1">
+                            <a href={project.demoLink} target="_blank" rel="noopener noreferrer">
+                              <Github className="w-4 h-4 mr-2" />
+                              View on GitHub
+                            </a>
+                          </Button>
+                        )}
+                      </div>
+                      
+                      {/* Additional Project Information */}
+                      <div className="border-t pt-4 mt-4">
+                        <h4 className="font-semibold text-foreground mb-3">Project Overview</h4>
+                        <div className="text-sm text-muted-foreground space-y-2">
+                          <p>
+                            This project demonstrates our expertise in {project.technologies.slice(0, 2).join(' and ')} 
+                            and showcases our ability to deliver {project.category.toLowerCase()} solutions.
+                          </p>
+                          <p>
+                            Click the button above to explore the source code and implementation details on GitHub.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </MorphingDialogContent>
+              </MorphingDialogContainer>
+            </MorphingDialog>
           ))}
         </div>
 

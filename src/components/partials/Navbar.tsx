@@ -61,29 +61,6 @@ export default function Navbar() {
     }
   };
 
-  // Fungsi untuk toggle theme dengan transisi yang lebih baik
-  const handleThemeToggle = () => {
-    if (!mounted) return;
-    
-    // Prevent multiple rapid clicks
-    const newTheme = theme === "dark" ? "light" : "dark";
-    
-    // Apply transition class to specific elements instead of entire document
-    const mainElements = document.querySelectorAll('main, section, div[class*="bg-"], div[class*="border-"]');
-    mainElements.forEach(el => {
-      el.classList.add('theme-transition');
-    });
-
-    setTheme(newTheme);
-    
-    // Remove transition class after animation
-    setTimeout(() => {
-      mainElements.forEach(el => {
-        el.classList.remove('theme-transition');
-      });
-    }, 300);
-  };
-
   if (!mounted) {
     return (
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
@@ -91,8 +68,8 @@ export default function Navbar() {
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-2">
               <Image 
-                src="/images/RD-Dark-nobg.png" 
-                alt="Ryuzen Dev Logo" 
+                src="/images/logo/redstonelabs-dark.png" 
+                alt="Redstone Labs Logo" 
                 width={72} 
                 height={72} 
                 className="rounded-md"
@@ -115,8 +92,8 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
             <Image 
-              src="/images/RD-Dark-nobg.png" 
-              alt="Ryuzen Dev Logo" 
+              src={theme === 'dark' ? "/images/logo/redstonelabs-dark.png" : "/images/logo/redstonelabs-light.png"} 
+              alt="Redstone Labs Logo" 
               width={72} 
               height={72} 
               className="rounded-md"
@@ -157,9 +134,8 @@ export default function Navbar() {
             <Button
               variant="ghost"
               size="icon"
-              onClick={handleThemeToggle}
+              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
               className="transition-all duration-200 hover:scale-110"
-              disabled={!mounted}
             >
               {theme === "dark" ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
             </Button>

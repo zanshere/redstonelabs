@@ -1,4 +1,4 @@
-# DevCraft Studio - Premium Web Development Agency Website
+# Redstone Labs - Jasa Pembuatan Website
 
 A modern, fully-responsive web development agency website built with Next.js 14, featuring smooth animations with GSAP, buttery-smooth scrolling with Lenis, and a beautiful dark/light mode.
 
@@ -21,25 +21,17 @@ Before you begin, ensure you have the following installed:
 
 ## 🛠️ Installation
 
-### Step 1: Create Next.js Project
+### Step 1: Clone this repo
 
 ```bash
-npx create-next-app@latest devcraft-studio
-cd devcraft-studio
+git clone https://github.com/zanshere/redstonelabs.git
+cd redstonelabs
 ```
-
-When prompted, select:
-- TypeScript: Yes
-- ESLint: Yes
-- Tailwind CSS: Yes
-- `src/` directory: No
-- App Router: Yes
-- Import alias: Yes (@/*)
 
 ### Step 2: Install Dependencies
 
 ```bash
-npm install @radix-ui/react-slot @studio-freight/lenis gsap lucide-react next-themes class-variance-authority clsx tailwind-merge tailwindcss-animate
+npm install 
 ```
 
 ### Step 3: Project Structure

@@ -4,62 +4,62 @@ import { Project } from '@/types';
 export const projects: Project[] = [
   {
     id: 1,
-    title: "E-Commerce Fashion Store",
-    description: "Website toko online fashion dengan sistem inventory terintegrasi, payment gateway, dan dashboard admin yang user-friendly.",
-    imageUrl: "/images/projects/fashion-store.jpg",
-    demoLink: "https://demo-fashionstore.ryuzen.dev",
-    category: "E-Commerce",
-    technologies: ["Next.js", "TypeScript", "Prisma", "Stripe", "Tailwind CSS"],
+    title: "UNAIR Library",
+    description: "Website ini merupakan platform perpustakaan online Universitas Airlangga yang memungkinkan mahasiswa, dosen, dan staf untuk mengakses informasi buku, penulis, dan penerbit secara digital. Website ini juga menyediakan fitur manajemen data siswa dan buku, sehingga mempermudah proses peminjaman dan pencarian koleksi perpustakaan.",
+    imageUrl: "/images/projects/unair-library.jpeg",
+    demoLink: "https://github.com/afiyontheroad/unairlibrary",
+    category: "Education",
+    technologies: ["PHP Native", "CSS", "JavaScript", "MySQL"],
     createdAt: new Date('2024-03-15')
   },
   {
     id: 2,
-    title: "Company Profile PT. Maju Jaya",
-    description: "Website company profile modern dengan portfolio, blog, dan sistem kontak untuk perusahaan konstruksi terkemuka.",
-    imageUrl: "/images/projects/company-profile.jpg",
-    demoLink: "https://majujaya.ryuzen.dev",
-    category: "Company Profile",
-    technologies: ["React", "TypeScript", "Contentful", "Framer Motion"],
+    title: "Mobila Showroom Mobil",
+    description: "Website dealer mobil ini dibuat sebagai platform digital untuk menampilkan berbagai informasi mengenai mobil yang tersedia, layanan dealer, serta memudahkan calon pembeli dalam mencari mobil sesuai kebutuhan.",
+    imageUrl: "/images/projects/mobila.jpeg",
+    demoLink: "https://github.com/Rindo88/mobila-php-native",
+    category: "Company Project",
+    technologies: ["PHP Native", "Tailwind CSS", "JavaScript", "SweetAlert2", "Lenis", "MySQL"],
     createdAt: new Date('2024-02-28')
   },
   {
     id: 3,
-    title: "Restaurant Booking System",
+    title: "TitipAja Sewa Loker",
     description: "Sistem reservasi restoran dengan table management, menu digital, dan integrasi WhatsApp untuk konfirmasi.",
-    imageUrl: "/images/projects/restaurant-booking.jpg",
-    demoLink: "https://resto-booking.ryuzen.dev",
-    category: "Web Application",
-    technologies: ["Next.js", "Node.js", "MySQL", "WhatsApp API"],
+    imageUrl: "/images/projects/titip-aja.png",
+    demoLink: "https://github.com/Aamyoo/titip-aja",
+    category: "Company Project",
+    technologies: ["PHP Native", "Bootstrap 5", "MySQL", "Midtrans API"],
     createdAt: new Date('2024-04-10')
   },
   {
     id: 4,
-    title: "Educational Platform",
-    description: "Platform pembelajaran online dengan video streaming, quiz system, progress tracking, dan certificate generation.",
-    imageUrl: "/images/projects/education-platform.jpg",
-    demoLink: "https://edu-platform.ryuzen.dev",
-    category: "Web Application",
-    technologies: ["Vue.js", "Laravel", "MySQL", "AWS S3"],
+    title: "Fajar World Fantasy",
+    description: "website yang mengenalkan kebun binatang Fajar World Fantasy kepada pengunjungnya. Website ini menyediakan informasi lengkap tentang berbagai atraksi, fasilitas, dan kegiatan yang dapat dinikmati di kebun binatang tersebut. Dengan desain yang menarik dan navigasi yang mudah, pengunjung dapat dengan cepat menemukan informasi yang mereka butuhkan untuk merencanakan kunjungan mereka ke Fajar World Fantasy.",
+    imageUrl: "/images/projects/fwf-project.png",
+    demoLink: "https://github.com/zanshere/fwf-projects",
+    category: "Education",
+    technologies: ["Laravel 12", "Tailwind CSS", "GSAP"],
     createdAt: new Date('2024-01-20')
   },
   {
     id: 5,
-    title: "Real Estate Portal",
-    description: "Portal properti dengan advanced search, virtual tour, mortgage calculator, dan agent management system.",
-    imageUrl: "/images/projects/real-estate.jpg",
-    demoLink: "https://realestate.ryuzen.dev",
-    category: "Web Application",
-    technologies: ["React", "Python", "PostgreSQL", "Mapbox"],
+    title: "Ryuzen Portfolio",
+    description: "Website portfolio pribadi untuk menampilkan proyek, keterampilan, dan informasi kontak secara profesional.",
+    imageUrl: "/images/projects/ryuzen-portfolio.png",
+    demoLink: "https://github.com/zanshere/my-portfolio",
+    category: "Personal",
+    technologies: ["Astro", "React", "Tailwind CSS", "GSAP", "Lenis"],
     createdAt: new Date('2024-05-05')
   },
   {
     id: 6,
-    title: "Healthcare Management System",
-    description: "Sistem manajemen klinik dengan appointment scheduling, patient records, billing, dan telemedicine features.",
+    title: "Noeru Store",
+    description: "website yang menawarkan jasa joki game dan juga top up berbagai item dalam game. Website ini dirancang untuk memudahkan para gamer dalam meningkatkan pengalaman bermain mereka dengan menyediakan layanan joki profesional serta berbagai pilihan item game yang dapat dibeli dengan mudah dan cepat.",
     imageUrl: "/images/projects/healthcare-system.jpg",
-    demoLink: "https://clinic-management.ryuzen.dev",
+    demoLink: "https://github.com/",
     category: "Web Application",
-    technologies: ["Angular", "NestJS", "MongoDB", "WebRTC"],
+    technologies: ["PHP Native", "Bootstrap 5", "MySQL"],
     createdAt: new Date('2024-03-30')
   }
 ];
@@ -67,11 +67,10 @@ export const projects: Project[] = [
 // Project categories for filtering
 export const projectCategories = [
   "All",
-  "E-Commerce",
-  "Company Profile", 
-  "Web Application",
-  "Mobile App",
-  "Dashboard"
+  "Education",
+  "Company Project",
+  "Personal",
+  "Entertaiment"
 ];
 
 // Helper functions for filtering

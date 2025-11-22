@@ -7,8 +7,7 @@ export interface TeamMember {
   photoUrl?: string;
   social?: {
     github?: string;
-    linkedin?: string;
-    twitter?: string;
+    instagram?: string;
   };
   createdAt: Date;
 }
