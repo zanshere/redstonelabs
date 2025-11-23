@@ -3,6 +3,7 @@ import { Lexend } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import SmoothScrollProvider from "@/components/smooth-scroll-provider";
+import { Analytics } from "@vercel/analytics/next"
 
 const lexend = Lexend({
   variable: "--font-lexend-sans",
@@ -41,6 +42,7 @@ export default function RootLayout({
         >
           <SmoothScrollProvider>
             {children}
+            <Analytics />
           </SmoothScrollProvider>
         </ThemeProvider>
       </body>
