@@ -8,6 +8,7 @@ export interface TeamMember {
   social?: {
     github?: string;
     instagram?: string;
+    facebook?: string;
   };
   createdAt: Date;
 }
