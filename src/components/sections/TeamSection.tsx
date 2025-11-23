@@ -31,10 +31,10 @@ export default function TeamSection() {
     <section id="team" className="py-20 bg-muted/50 fade-in-section">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <Badge className="mb-4">Our Team</Badge>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">Meet The Experts</h2>
+          <Badge className="mb-4">Tim Kami</Badge>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">Kenali Tim Profesional</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Talented individuals united by a passion for creating exceptional digital experiences
+           Tim berkompeten yang dipersatukan oleh dedikasi untuk pengalaman digital unggul.
           </p>
         </div>
 
