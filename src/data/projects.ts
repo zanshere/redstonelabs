@@ -61,6 +61,16 @@ export const projects: Project[] = [
     category: "Web Aplikasi",
     technologies: ["PHP Native", "Bootstrap 5", "MySQL"],
     createdAt: new Date('2024-03-30')
+  },
+  {
+    id: 7,
+    title: "Dashboard Garuda Abdi Satyatama",
+    description: "sistem manajemen data berbasis web yang digunakan untuk mengelola informasi karyawan, tamu, dan inventaris secara cepat dan efisien.",
+    imageUrl: "/images/projects/dashboardgarudaabdi.jpeg",
+    demoLink: "https://github.com/RozanFathinYafi/dasboard_pkl.git",
+    category: "Proyek Perusahaan",
+    technologies: ["PHP Native", "Lenis", "Tailwind", "Daisy UI", "Font Awesome", "Lucide"],
+    createdAt: new Date('2024-08-17')
   }
 ];
 
