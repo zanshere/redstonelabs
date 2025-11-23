@@ -20,25 +20,25 @@ export default function Footer() {
               />
             </div>
             <p className="text-muted-foreground text-sm">
-              Building exceptional web experiences that drive business growth and user satisfaction.
+              Membangun pengalaman web luar biasa yang mendorong pertumbuhan bisnis dan kepuasan pengguna.
             </p>
           </div>
           <div>
-            <h4 className="font-semibold mb-4">Company</h4>
+            <h4 className="font-semibold mb-4">Perusahaan</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
                 <a href="#about" className="hover:text-primary transition-colors">
-                  About Us
+                  Tentang kami
                 </a>
               </li>
               <li>
                 <a href="#team" className="hover:text-primary transition-colors">
-                  Our Team
+                  Tim Kami
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-primary transition-colors">
-                  Careers
+                  Karir
                 </a>
               </li>
               <li>
@@ -49,26 +49,26 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <h4 className="font-semibold mb-4">Services</h4>
+            <h4 className="font-semibold mb-4">Layanan</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
                 <a href="#" className="hover:text-primary transition-colors">
-                  Web Development
+                 Pengembangan Web
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-primary transition-colors">
-                  Mobile Apps
+                  Aplikasi Mobile
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-primary transition-colors">
-                  UI/UX Design
+                 Desain UI/UX 
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-primary transition-colors">
-                  Consulting
+                  Konsultasi
                 </a>
               </li>
             </ul>
@@ -78,24 +78,24 @@ export default function Footer() {
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
                 <a href="#" className="hover:text-primary transition-colors">
-                  Privacy Policy
+                  Kebijakan Privasi
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-primary transition-colors">
-                  Terms of Service
+                  Syarat Layanan
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-primary transition-colors">
-                  Cookie Policy
+                  Kebijakan Cookie
                 </a>
               </li>
             </ul>
           </div>
         </div>
         <div className="pt-8 border-t border-border text-center text-sm text-muted-foreground">
-          <p>&copy; 2025 Redstone Labs. All rights reserved. Built with passion and code.</p>
+          <p>&copy; 2025 Redstone Labs. Semua hak dilindungi. Dibangun dengan passion dan kode.</p>
         </div>
       </div>
     </footer>
