@@ -11,10 +11,10 @@ import { StatItem } from "@/types";
 gsap.registerPlugin(ScrollTrigger);
 
 const stats: StatItem[] = [
-  { number: 150, label: "Projects Completed", suffix: "+" },
-  { number: 98, label: "Client Satisfaction", suffix: "%" },
-  { number: 50, label: "Team Members", suffix: "+" },
-  { number: 10, label: "Years Experience", suffix: "+" },
+  { number: 150, label: "Proyek Selesai", suffix: "+" },
+  { number: 98, label: "Kepuasan Klien", suffix: "%" },
+  { number: 50, label: "Profesional Tim", suffix: "+" },
+  { number: 10, label: "Tahun Keahlian", suffix: "+" },
 ];
 
 export default function HeroSection() {
@@ -282,10 +282,10 @@ export default function HeroSection() {
         {/* Title - TIDAK ADA opacity change saat scroll */}
         <div ref={titleRef} style={{ opacity: 0 }}>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-foreground leading-tight">
-            Transform Your Digital
+            Wujudkan Visi Digital Anda
             <br />
             <span className="bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
-              Vision Into Reality
+              Menjadi Kenyataan
             </span>
           </h1>
         </div>
@@ -296,8 +296,8 @@ export default function HeroSection() {
           style={{ opacity: 0 }}
           className="text-lg md:text-xl lg:text-2xl mb-8 text-muted-foreground max-w-3xl mx-auto leading-relaxed"
         >
-          We craft exceptional web experiences that combine cutting-edge technology
-          with stunning design to drive your business forward
+          Kami menghadirkan pengalaman web luar biasa dengan teknologi modern 
+          dan desain elegan untuk pertumbuhan bisnis Anda.
         </p>
 
         {/* Buttons */}
@@ -307,10 +307,10 @@ export default function HeroSection() {
           className="flex flex-col sm:flex-row gap-4 justify-center mb-16"
         >
           <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-3 text-lg font-semibold transition-all duration-300 hover:scale-105">
-            Start Your Project <ArrowRight className="ml-2 w-5 h-5" />
+            Wujudkan Proyek Anda <ArrowRight className="ml-2 w-5 h-5" />
           </Button>
           <Button size="lg" variant="outline" className="border-2 border-primary text-primary hover:bg-primary/10 px-8 py-3 text-lg font-semibold transition-all duration-300 hover:scale-105">
-            View Portfolio
+            Lihat Portfolio
           </Button>
         </div>
 
