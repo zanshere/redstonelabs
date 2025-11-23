@@ -8,7 +8,7 @@ export const projects: Project[] = [
     description: "Website ini merupakan platform perpustakaan online Universitas Airlangga yang memungkinkan mahasiswa, dosen, dan staf untuk mengakses informasi buku, penulis, dan penerbit secara digital. Website ini juga menyediakan fitur manajemen data siswa dan buku, sehingga mempermudah proses peminjaman dan pencarian koleksi perpustakaan.",
     imageUrl: "/images/projects/unair-library.jpeg",
     demoLink: "https://github.com/afiyontheroad/unairlibrary",
-    category: "Education",
+    category: "Edukasi",
     technologies: ["PHP Native", "CSS", "JavaScript", "MySQL"],
     createdAt: new Date('2024-03-15')
   },
@@ -18,7 +18,7 @@ export const projects: Project[] = [
     description: "Website dealer mobil ini dibuat sebagai platform digital untuk menampilkan berbagai informasi mengenai mobil yang tersedia, layanan dealer, serta memudahkan calon pembeli dalam mencari mobil sesuai kebutuhan.",
     imageUrl: "/images/projects/mobila.jpeg",
     demoLink: "https://github.com/Rindo88/mobila-php-native",
-    category: "Company Project",
+    category: "Proyek Perusahaan",
     technologies: ["PHP Native", "Tailwind CSS", "JavaScript", "SweetAlert2", "Lenis", "MySQL"],
     createdAt: new Date('2024-02-28')
   },
@@ -28,7 +28,7 @@ export const projects: Project[] = [
     description: "Sistem reservasi restoran dengan table management, menu digital, dan integrasi WhatsApp untuk konfirmasi.",
     imageUrl: "/images/projects/titip-aja.png",
     demoLink: "https://github.com/Aamyoo/titip-aja",
-    category: "Company Project",
+    category: "Proyek Perusahaan",
     technologies: ["PHP Native", "Bootstrap 5", "MySQL", "Midtrans API"],
     createdAt: new Date('2024-04-10')
   },
@@ -38,7 +38,7 @@ export const projects: Project[] = [
     description: "website yang mengenalkan kebun binatang Fajar World Fantasy kepada pengunjungnya. Website ini menyediakan informasi lengkap tentang berbagai atraksi, fasilitas, dan kegiatan yang dapat dinikmati di kebun binatang tersebut. Dengan desain yang menarik dan navigasi yang mudah, pengunjung dapat dengan cepat menemukan informasi yang mereka butuhkan untuk merencanakan kunjungan mereka ke Fajar World Fantasy.",
     imageUrl: "/images/projects/fwf-project.png",
     demoLink: "https://github.com/zanshere/fwf-projects",
-    category: "Education",
+    category: "Edukasi",
     technologies: ["Laravel 12", "Tailwind CSS", "GSAP"],
     createdAt: new Date('2024-01-20')
   },
@@ -58,7 +58,7 @@ export const projects: Project[] = [
     description: "website yang menawarkan jasa joki game dan juga top up berbagai item dalam game. Website ini dirancang untuk memudahkan para gamer dalam meningkatkan pengalaman bermain mereka dengan menyediakan layanan joki profesional serta berbagai pilihan item game yang dapat dibeli dengan mudah dan cepat.",
     imageUrl: "/images/projects/healthcare-system.jpg",
     demoLink: "https://github.com/",
-    category: "Web Application",
+    category: "Web Aplikasi",
     technologies: ["PHP Native", "Bootstrap 5", "MySQL"],
     createdAt: new Date('2024-03-30')
   }
@@ -67,10 +67,10 @@ export const projects: Project[] = [
 // Project categories for filtering
 export const projectCategories = [
   "All",
-  "Education",
-  "Company Project",
+  "Edukasi",
+  "Proyek Perusahaan",
   "Personal",
-  "Entertaiment"
+  "Hiburan"
 ];
 
 // Helper functions for filtering
