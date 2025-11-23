@@ -39,10 +39,10 @@ export default function PortfolioSection() {
     <section id="portfolio" className="py-20 bg-background fade-in-section">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <Badge className="mb-4">Our Work</Badge>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">Featured Projects</h2>
+          <Badge className="mb-4">Hasil Kerja Kami</Badge>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">Proyek Terkemuka</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Explore our portfolio of successful projects that showcase our expertise and creativity
+            Jelajahi karya kami yang sukses dan berdampak nyata.
           </p>
         </div>
 
@@ -90,12 +90,12 @@ export default function PortfolioSection() {
                       ))}
                       {project.technologies.length > 3 && (
                         <Badge variant="outline" className="text-xs">
-                          +{project.technologies.length - 3} more
+                          +{project.technologies.length - 3} eksplor
                         </Badge>
                       )}
                     </div>
                     <div className="text-xs text-muted-foreground">
-                      Click to view details
+                     Lihat Detail
                     </div>
                   </CardFooter>
                 </Card>
