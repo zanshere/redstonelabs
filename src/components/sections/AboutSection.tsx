@@ -10,18 +10,18 @@ import { useTheme } from "next-themes";
 const coreValues = [
   {
     icon: <Rocket className="w-12 h-12 text-primary" />,
-    title: "Innovation First",
-    description: "We stay ahead of the curve, constantly exploring new technologies and methodologies to deliver cutting-edge solutions.",
+    title: "Inovasi Utama",
+    description: "Kami selalu selangkah lebih maju, terus mengeksplorasi teknologi dan metodologi baru untuk menghadirkan solusi mutakhir.",
   },
   {
     icon: <Shield className="w-12 h-12 text-primary" />,
-    title: "Quality Assured",
-    description: "Every line of code is crafted with precision. We maintain the highest standards in development and design.",
+    title: "Kualitas Unggul",
+    description: "Setiap baris kode dirancang dengan presisi. Kami menjunjung standar tertinggi dalam pengembangan dan desain.",
   },
   {
     icon: <Target className="w-12 h-12 text-primary" />,
-    title: "Client-Focused",
-    description: "Your success is our success. We work closely with you to understand your goals and deliver results that matter.",
+    title: "Prioritas Klien",
+    description: "Mewujudkan tujuan Anda adalah misi kami. Kami bekerja dekat dengan Anda untuk menghasilkan dampak yang nyata.",
   },
 ];
 
@@ -32,26 +32,26 @@ export default function AboutSection() {
     <section id="about" className="py-20 bg-background fade-in-section">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <Badge className="mb-4">About Us</Badge>
+          <Badge className="mb-4">Tentang Kami</Badge>
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-            Building Digital Excellence Since 2014
+            Mewujudkan Solusi Digital <br />Berkualitas Sejak 2014 🚀
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            We`re a passionate team of developers, designers, and strategists
-            dedicated to creating web solutions that make a difference
+            Kami adalah tim berdedikasi dari pengembang, desainer, 
+            dan ahli strategi, yang menghadirkan solusi web yang berdampak nyata.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
           <div>
-            <h3 className="text-3xl font-bold mb-6 text-foreground">Our Mission</h3>
+            <h3 className="text-3xl font-bold mb-6 text-foreground">Dedikasi Kami</h3>
             <p className="text-lg text-muted-foreground mb-6">
-              To empower businesses with innovative digital solutions that drive growth,
-              enhance user experiences, and create lasting value in an ever-evolving digital landscape.
+              Memberdayakan bisnis melalui solusi digital inovatif yang mendorong pertumbuhan, meningkatkan pengalaman pengguna, 
+              dan menciptakan nilai berkelanjutan di era digital yang terus berkembang.
             </p>
             <p className="text-lg text-muted-foreground">
-              We believe in the power of technology to transform businesses and improve lives.
-              Every project we undertake is an opportunity to push boundaries and exceed expectations.
+              Kami percaya bahwa teknologi memiliki kekuatan untuk mentransformasi bisnis dan meningkatkan kualitas hidup. 
+              Setiap proyek yang kami tangani adalah kesempatan untuk mendorong batas kemampuan dan melampaui ekspektasi.
             </p>
           </div>
           <div className="relative h-96 rounded-2xl overflow-hidden shadow-2xl">
