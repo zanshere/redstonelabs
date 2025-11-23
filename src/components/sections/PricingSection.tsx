@@ -24,10 +24,10 @@ export default function PricingSection() {
     ...plan,
     popular: index === 1, // Mark the second plan as popular
     description: 
-      plan.packageName.includes("Sederhana") ? "Perfect for small businesses" :
-      plan.packageName.includes("Bisnis") ? "Ideal for growing businesses" :
-      plan.packageName.includes("Premium") ? "Complete solution for enterprises" :
-      "Full online store platform"
+      plan.packageName.includes("Sederhana") ? "Cocok untuk usaha kecil" :
+      plan.packageName.includes("Bisnis") ? "Ideal untuk bisnis yang sedang berkembang" :
+      plan.packageName.includes("Premium") ? "Solusi lengkap untuk perusahaan" :
+      "Platform toko online lengkap"
   }));
 
   return (
@@ -35,14 +35,14 @@ export default function PricingSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <Badge variant="secondary" className="mb-4 text-sm font-semibold px-3 py-1">
-            Pricing
+           Penawaran
           </Badge>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-foreground">
-            Choose Your Plan
+            Pilih Paket Anda
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-            Transparent pricing designed to fit your needs and budget. 
-            Start small and scale as you grow.
+            Harga transparan yang dirancang sesuai kebutuhan dan anggaran Anda. 
+            Mulai kecil dan kembangkan seiring pertumbuhan bisnis Anda.
           </p>
         </div>
 
@@ -60,7 +60,7 @@ export default function PricingSection() {
                 <div className="absolute -top-[-1] left-1/2 -translate-x-1/2 z-10">
                   <Badge className="bg-primary text-primary-foreground px-4 py-1.5 text-xs font-bold shadow-lg">
                     <Star className="w-3 h-3 mr-1 fill-current" />
-                    Most Popular
+                    Paling Populer
                   </Badge>
                 </div>
               )}
@@ -99,7 +99,7 @@ export default function PricingSection() {
                   }`}
                   size="lg"
                 >
-                  Get Started
+                 Bergabung Sekarang
                   <ArrowRight className={`ml-2 w-4 h-4 transition-transform duration-200 group-hover:translate-x-1 ${
                     plan.popular ? '' : 'text-primary'
                   }`} />
@@ -116,10 +116,10 @@ export default function PricingSection() {
         <div className="mt-16 text-center">
           <div className="bg-background/50 backdrop-blur-sm rounded-2xl p-8 border border-border/50 max-w-2xl mx-auto">
             <p className="text-muted-foreground mb-4 text-lg">
-              💫 All plans include free consultation and project planning
+              💫 Semua paket mencakup konsultasi gratis serta perencanaan proyek profesional.
             </p>
             <Button variant="ghost" className="text-primary hover:text-primary/80 text-lg font-semibold">
-              Need a custom solution? Contact us 
+              Solusi khusus menanti Anda. Hubungi kami. 
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
           </div>
