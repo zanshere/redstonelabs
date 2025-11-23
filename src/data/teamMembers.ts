@@ -10,7 +10,8 @@ export const teamMembers: TeamMember[] = [
     photoUrl: "/images/team/fauzan.jpeg",
     social: {
       github: "https://github.com/zanshere",
-      instagram: "https://instagram.com/zanshere_"
+      instagram: "https://instagram.com/zanshere_",
+      facebook:"#"
       
     },
     createdAt: new Date('2024-01-10')
@@ -23,7 +24,8 @@ export const teamMembers: TeamMember[] = [
     photoUrl: "/images/team/rozan.png",
     social: {
       github: "https://github.com/RozanFathinYafi",
-      instagram: "https://instagram.com/trozan_malware"
+      instagram: "#",
+      facebook:"https://www.facebook.com/TrozanMalware"
       
     },
     createdAt: new Date('2024-01-10')
@@ -36,7 +38,8 @@ export const teamMembers: TeamMember[] = [
     photoUrl: "/images/team/ishaq.jpeg",
     social: {
       github: "https://github.com/budisantoso",
-      instagram: "https://instagram.com/amyo.ku"
+      instagram: "https://instagram.com/amyo.ku",
+      facebook: "#"
     },
     createdAt: new Date('2024-01-10')
   },
@@ -45,10 +48,11 @@ export const teamMembers: TeamMember[] = [
     name: "Nafila Osa Sumayya",
     position: "UI/UX Designer",
     bio: "UI/UX designer dengan pendekatan human-centered design. Berpengalaman dalam riset pengguna, wireframing, dan pembuatan desain visual yang intuitif serta estetis.",
-    photoUrl: "/images/team/osa.jpeg",
+    photoUrl: "/images/team/osaa.jpeg",
     social: {
       github: "https://github.com/afiyontheroad",
-      instagram: "https://instagram.com/nafilays"
+      instagram: "https://instagram.com/nafileya",
+      facebook: "#"
          },
     createdAt: new Date('2024-01-10')
   },
@@ -60,7 +64,8 @@ export const teamMembers: TeamMember[] = [
     photoUrl: "/images/team/dewa-putra.jpg",
     social: {
       github: "https://github.com/devaputra",
-      instagram: "https://instagram.com/jowell21"
+      instagram: "https://instagram.com/jowell21",
+      facebook: "#"
     },
     createdAt: new Date('2024-02-15')
   }
