@@ -54,11 +54,11 @@ export const projects: Project[] = [
   },
   {
     id: 6,
-    title: "Noeru Store",
-    description: "website yang menawarkan jasa joki game dan juga top up berbagai item dalam game. Website ini dirancang untuk memudahkan para gamer dalam meningkatkan pengalaman bermain mereka dengan menyediakan layanan joki profesional serta berbagai pilihan item game yang dapat dibeli dengan mudah dan cepat.",
-    imageUrl: "/images/projects/healthcare-system.jpg",
+    title: "YVIEEPEDIA",
+    description: "Website joki Mobile Legends ini adalah platform profesional yang dibangun dengan PHP dan MySQL, menawarkan sistem dual-role dimana user dapat memesan berbagai layanan joki seperti boost rank, improve win rate, dan coaching session, sementara admin memiliki dashboard lengkap untuk mengelola pesanan, memantau status, dan mengatur katalog layanan, semua dalam antarmuka futuristik yang responsif dan aman dengan desain neon modern yang menarik.",
+    imageUrl: "/images/projects/yvieepedia.jpg",
     demoLink: "https://github.com/",
-    category: "Web Aplikasi",
+    category: "Entertaiment",
     technologies: ["PHP Native", "Bootstrap 5", "MySQL"],
     createdAt: new Date('2024-03-30')
   },
@@ -80,7 +80,7 @@ export const projectCategories = [
   "Edukasi",
   "Proyek Perusahaan",
   "Personal",
-  "Hiburan"
+  "Entertaiment",
 ];
 
 // Helper functions for filtering

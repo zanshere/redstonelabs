@@ -11,7 +11,6 @@ export const teamMembers: TeamMember[] = [
     social: {
       github: "https://github.com/zanshere",
       instagram: "https://instagram.com/zanshere_",
-      facebook:"#"
       
     },
     createdAt: new Date('2024-01-10')
@@ -24,7 +23,6 @@ export const teamMembers: TeamMember[] = [
     photoUrl: "/images/team/rozan.png",
     social: {
       github: "https://github.com/RozanFathinYafi",
-      instagram: "#",
       facebook:"https://www.facebook.com/TrozanMalware"
       
     },
@@ -37,9 +35,8 @@ export const teamMembers: TeamMember[] = [
     bio: "Spesialis backend dengan pengalaman 4 tahun dalam pengembangan API, database management, dan arsitektur server-side. Berfokus pada performa, keamanan, dan stabilitas sistem.",
     photoUrl: "/images/team/ishaq.jpeg",
     social: {
-      github: "https://github.com/budisantoso",
+      github: "https://github.com/Aamyoo",
       instagram: "https://instagram.com/amyo.ku",
-      facebook: "#"
     },
     createdAt: new Date('2024-01-10')
   },
@@ -52,7 +49,6 @@ export const teamMembers: TeamMember[] = [
     social: {
       github: "https://github.com/afiyontheroad",
       instagram: "https://instagram.com/nafileya",
-      facebook: "#"
          },
     createdAt: new Date('2024-01-10')
   },
@@ -61,11 +57,10 @@ export const teamMembers: TeamMember[] = [
     name: "Joshua Noel Siregar",
     position: "Application Security Engineer",
     bio: "Application Security Engineer yang berfokus pada pengujian keamanan web dan server. Berpengalaman menggunakan berbagai tools dari Kali Linux untuk vulnerability assessment, penetration testing, dan analisis risiko keamanan aplikasi.",
-    photoUrl: "/images/team/dewa-putra.jpg",
+    photoUrl: "/images/team/joshua.jpg",
     social: {
-      github: "https://github.com/devaputra",
-      instagram: "https://instagram.com/jowell21",
-      facebook: "#"
+      github: "https://github.com/The-prince21",
+      instagram: "https://instagram.com/jowelll21_"
     },
     createdAt: new Date('2024-02-15')
   }

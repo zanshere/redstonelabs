@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { StatItem } from "@/types";
+import { useRouter } from 'next/navigation';
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -29,6 +30,16 @@ export default function HeroSection() {
   const orb4Ref = useRef<HTMLDivElement>(null);
   const patternRef = useRef<HTMLDivElement>(null);
   const scrollIndicatorRef = useRef<HTMLDivElement>(null);
+
+  const router = useRouter();
+
+    const priceClick = () => {
+    router.push('#pricing');
+  };
+
+    const portfolioClick = () => {
+    router.push('#portfolio');
+  };
 
   useEffect(() => {
     if (!heroRef.current) return;
@@ -306,10 +317,10 @@ export default function HeroSection() {
           style={{ opacity: 0 }}
           className="flex flex-col sm:flex-row gap-4 justify-center mb-16"
         >
-          <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-3 text-lg font-semibold transition-all duration-300 hover:scale-105">
+          <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-3 text-lg font-semibold transition-all duration-300 hover:scale-105" onClick={priceClick}>
             Wujudkan Proyek Anda <ArrowRight className="ml-2 w-5 h-5" />
           </Button>
-          <Button size="lg" variant="outline" className="border-2 border-primary text-primary hover:bg-primary/10 px-8 py-3 text-lg font-semibold transition-all duration-300 hover:scale-105">
+          <Button size="lg" variant="outline" className="border-2 border-primary text-primary hover:bg-primary/10 px-8 py-3 text-lg font-semibold transition-all duration-300 hover:scale-105" onClick={portfolioClick}>
             Lihat Portfolio
           </Button>
         </div>
