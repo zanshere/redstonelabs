@@ -13,7 +13,7 @@ export const pricingPlans: PricingPlan[] = [
       "Hosting & domain 1 tahun",
       "Support 1 bulan"
     ]),
-    price: 2990000,
+    price: 1000000,
     createdAt: new Date('2024-01-15')
   },
   {
@@ -29,7 +29,7 @@ export const pricingPlans: PricingPlan[] = [
       "Support 3 bulan",
       "Training penggunaan"
     ]),
-    price: 5990000,
+    price: 2500000,
     createdAt: new Date('2024-01-15')
   },
   {
@@ -46,7 +46,7 @@ export const pricingPlans: PricingPlan[] = [
       "Priority support 6 bulan",
       "Garansi 1 tahun"
     ]),
-    price: 12990000,
+    price: 5000000,
     createdAt: new Date('2024-01-15')
   },
   {
