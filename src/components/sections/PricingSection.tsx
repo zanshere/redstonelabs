@@ -19,10 +19,22 @@ export default function PricingSection() {
     }).format(price);
   };
 
+  // Handle scroll to contact section for E-Commerce package
+  const scrollToContactSection = () => {
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ 
+        behavior: "smooth",
+        block: "start"
+      });
+    }
+  };
+
   // Add popular flag and descriptions
   const enhancedPlans = pricingPlans.map((plan, index) => ({
     ...plan,
     popular: index === 1, // Mark the second plan as popular
+    isEcommerce: plan.packageName === "E-Commerce", // Mark E-Commerce package
     description: 
       plan.packageName.includes("Sederhana") ? "Cocok untuk usaha kecil" :
       plan.packageName.includes("Bisnis") ? "Ideal untuk bisnis yang sedang berkembang" :
@@ -53,6 +65,8 @@ export default function PricingSection() {
               className={`group relative overflow-hidden transition-all duration-300 hover:shadow-xl ${
                 plan.popular 
                   ? "border-primary border-2 shadow-lg scale-105 bg-gradient-to-b from-primary/5 to-transparent" 
+                  : plan.isEcommerce
+                  ? "border-amber-400 border-2 bg-gradient-to-b from-amber-400/5 to-transparent"
                   : "border-border hover:border-primary/50"
               }`}
             >
@@ -65,13 +79,28 @@ export default function PricingSection() {
                 </div>
               )}
               
-              <CardHeader className={`text-center pb-6 ${plan.popular ? 'pt-10' : 'pt-8'}`}>
+              {plan.isEcommerce && (
+                <div className="absolute -top-[-1] left-1/2 -translate-x-1/2 z-10">
+                  <Badge className="bg-amber-400 text-amber-900 px-4 py-1.5 text-xs font-bold shadow-lg">
+                    <Star className="w-3 h-3 mr-1 fill-current" />
+                    Khusus
+                  </Badge>
+                </div>
+              )}
+              
+              <CardHeader className={`text-center pb-6 ${
+                plan.popular || plan.isEcommerce ? 'pt-10' : 'pt-8'
+              }`}>
                 <CardTitle className="text-xl font-bold text-foreground mb-3">
                   {plan.packageName}
                 </CardTitle>
                 <div className="flex flex-col items-center">
                   <div className="text-3xl font-bold text-primary mb-1">
-                    {formatPrice(plan.price)}
+                    {plan.isEcommerce ? (
+                      <span className="text-amber-400">Hubungi Admin</span>
+                    ) : (
+                      formatPrice(plan.price)
+                    )}
                   </div>
                   <CardDescription className="text-sm font-medium text-muted-foreground">
                     {plan.description}
@@ -82,7 +111,7 @@ export default function PricingSection() {
               <CardContent className="pb-6">
                 <div className="space-y-3">
                   {plan.features.map((feature, featureIdx) => (
-                    <div key={featureIdx} className="flex items-start gap-3 group-hover:translate-x-1 transition-transform duration-200">
+                    <div key={featureIdx} className="flex items-start gap-3 transition-transform duration-200">
                       <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
                       <span className="text-sm text-foreground leading-relaxed">{feature}</span>
                     </div>
@@ -91,19 +120,30 @@ export default function PricingSection() {
               </CardContent>
               
               <CardFooter>
-                <Button 
-                  className={`w-full font-semibold py-6 ${
-                    plan.popular 
-                      ? "bg-primary hover:bg-primary/90 shadow-md" 
-                      : "bg-secondary hover:bg-secondary/80 text-foreground"
-                  }`}
-                  size="lg"
-                >
-                 Bergabung Sekarang
-                  <ArrowRight className={`ml-2 w-4 h-4 transition-transform duration-200 group-hover:translate-x-1 ${
-                    plan.popular ? '' : 'text-primary'
-                  }`} />
-                </Button>
+                {plan.isEcommerce ? (
+                  <Button 
+                    className="w-full font-semibold py-6 bg-amber-400 hover:bg-amber-500 text-amber-900 shadow-md"
+                    size="lg"
+                    onClick={scrollToContactSection}
+                  >
+                    Hubungi Admin
+                    <ArrowRight className="ml-2 w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
+                  </Button>
+                ) : (
+                  <Button 
+                    className={`w-full font-semibold py-6 ${
+                      plan.popular 
+                        ? "bg-primary hover:bg-primary/90 shadow-md" 
+                        : "bg-secondary hover:bg-secondary/80 text-foreground"
+                    }`}
+                    size="lg"
+                  >
+                    Bergabung Sekarang
+                    <ArrowRight className={`ml-2 w-4 h-4 transition-transform duration-200 group-hover:translate-x-1 ${
+                      plan.popular ? '' : 'text-primary'
+                    }`} />
+                  </Button>
+                )}
               </CardFooter>
 
               {/* Hover effect background */}
@@ -116,9 +156,16 @@ export default function PricingSection() {
         <div className="mt-16 text-center">
           <div className="bg-background/50 backdrop-blur-sm rounded-2xl p-8 border border-border/50 max-w-2xl mx-auto">
             <p className="text-muted-foreground mb-4 text-lg">
-              💫 Semua paket mencakup konsultasi gratis serta perencanaan proyek profesional.
+              Semua paket mencakup konsultasi gratis serta perencanaan proyek profesional.
             </p>
-            <Button variant="ghost" className="text-primary hover:text-primary/80 text-lg font-semibold">
+            <p className="text-muted-foreground mb-4 text-sm">
+              * Untuk paket E-Commerce, silakan hubungi admin kami untuk konsultasi dan penawaran khusus.
+            </p>
+            <Button 
+              variant="ghost" 
+              className="text-primary hover:text-primary/80 text-lg font-semibold"
+              onClick={scrollToContactSection}
+            >
               Solusi khusus menanti Anda. Hubungi kami. 
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>

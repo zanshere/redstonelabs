@@ -12,8 +12,8 @@ import { useRouter } from 'next/navigation';
 gsap.registerPlugin(ScrollTrigger);
 
 const stats: StatItem[] = [
-  { number: 150, label: "Proyek Selesai", suffix: "+" },
-  { number: 98, label: "Kepuasan Klien", suffix: "%" },
+  { number: 300, label: "Proyek Selesai", suffix: "+" },
+  { number: 99, label: "Kepuasan Klien", suffix: "%" },
   { number: 50, label: "Profesional Tim", suffix: "+" },
   { number: 10, label: "Tahun Keahlian", suffix: "+" },
 ];

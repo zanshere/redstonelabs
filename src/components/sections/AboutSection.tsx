@@ -34,7 +34,7 @@ export default function AboutSection() {
         <div className="text-center mb-16">
           <Badge className="mb-4">Tentang Kami</Badge>
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-            Mewujudkan Solusi Digital <br />Berkualitas Sejak 2014 🚀
+            Mewujudkan Solusi Digital <br />Berkualitas Sejak 2014
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Kami adalah tim berdedikasi dari pengembang, desainer, 
